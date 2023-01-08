@@ -26,10 +26,6 @@ export const View = state => {
     }
   }
 
-  if (!name.startsWith('/')) {
-    name = `/${name}`
-  }
-
   return picture(props, [
     avif &&
       source({
