@@ -7,17 +7,17 @@ const expectedHtml = ({
   avif = true,
   role = 'presentation',
   alt = '',
-  loading = 'lazy',
+  lazy = true,
   class: cl = '',
   imgClass = '',
 }) =>
   `
 <picture class="Picture${cl ? ` ${cl}` : ''}">
-${avif ? `<source type="image/avif" srcset="/${name}.avif"/>` : ''}
-<source type="image/webp" srcset="/${name}.webp"/>
+${avif ? `<source type="image/avif" srcset="${name}.avif"/>` : ''}
+<source type="image/webp" srcset="${name}.webp"/>
 <img${imgClass ? ` class="${imgClass}"` : ''}${
-    loading ? ` loading="${loading}"` : ''
-  } alt="${alt}"${role ? ` role="${role}"` : ''} src="/${name}.${ext}"/>
+    lazy ? ` loading="lazy"` : ''
+  } alt="${alt}"${role ? ` role="${role}"` : ''} src="${name}.${ext}"/>
 </picture>
 `
     .trim()
@@ -33,11 +33,14 @@ const tests = [
   { props: { name: 'image', avif: false }, info: 'can handle avif = false' },
   { props: { name: 'image', class: 'Testing' }, info: 'can add classname to container' },
   { props: { name: 'image', imgClass: 'Testing' }, info: 'can add classname to img' },
+  { props: { name: 'image', role: 'presentation' }, info: 'can use role: presentation' },
 ]
 
 export default tests.map(({ props, info }) => ({
   fn: () => Picture.View(props),
   html,
   expect: expectedHtml(props),
+  // leave here to easily test input/output
+  // expect: t => console.log({ t, e: expectedHtml(props) }) || expectedHtml(props)===t,
   info,
 }))
