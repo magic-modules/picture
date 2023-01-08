@@ -1,0 +1,53 @@
+{
+  "name": "@magic-modules/picture",
+  "version": "0.0.0",
+  "author": "Wizards & Witches",
+  "homepage": "https://magic-modules.github.io/picture",
+  "license": "AGPL-3.0",
+  "description": "@magic Picture module. wraps <picture> to load modern image formats with fallbacks to jpg|png|gif.",
+  "main": "src/index.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=14.15.4"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "start": "t -p",
+    "format": "f -w --exclude docs",
+    "test": "t --exclude docs example config.js",
+    "build": "NODE_ENV=production magic build",
+    "prod": "NODE_ENV=production magic build serve --watch src",
+    "dev": "magic dev --watch src",
+    "calls": "calls"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic-modules/picture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/magic-modules/picture/issues"
+  },
+  "devDependencies": {
+    "@magic-modules/light-switch": "0.0.11",
+    "@magic-modules/no-spy": "0.0.8",
+    "@magic-modules/pre": "0.0.11",
+    "@magic-themes/docs": "0.0.14",
+    "@magic/core": "0.0.144",
+    "@magic/format": "0.0.48",
+    "@magic/test": "0.2.14"
+  },
+  "keywords": [
+    "magic",
+    "module",
+    "picture"
+  ],
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ]
+}
