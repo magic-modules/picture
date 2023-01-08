@@ -53,8 +53,8 @@ first release.
 [npm-url]: https://www.npmjs.com/package/@magic-modules/picture
 [travis-image]: https://img.shields.io/travis/com/magic-modules/picture/master
 [travis-url]: https://travis-ci.com/magic-modules/picture
-[appveyor-image]: https://img.shields.io/appveyor/ci/magicmodules/quote/master.svg
-[appveyor-url]: https://ci.appveyor.com/project/magicmodules/quote/branch/master
+[appveyor-image]: https://img.shields.io/appveyor/ci/magicmodules/picture/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/magicmodules/picture/branch/master
 [coveralls-image]: https://coveralls.io/repos/github/magic-modules/picture/badge.svg
 [coveralls-url]: https://coveralls.io/github/magic-modules/picture
 [greenkeeper-image]: https://badges.greenkeeper.io/magic-modules/picture.svg
