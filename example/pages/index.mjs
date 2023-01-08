@@ -54,7 +54,7 @@ Picture({
   width: '',
   height: '',
   alt: '',
-  loading: 'lazy',
+  lazy: true,
   role: 'presentation',
   avif: true,
 })
