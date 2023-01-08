@@ -7,8 +7,8 @@ export const View = state => {
     width,
     height,
     alt = '',
-    loading = 'lazy',
-    role = 'presentation',
+    role,
+    lazy = true,
     avif = true,
   } = state
 
@@ -26,6 +26,16 @@ export const View = state => {
     }
   }
 
+  const imgProps = {
+    class: imgClass,
+    width,
+    height,
+    loading: lazy && 'lazy',
+    alt,
+    role: role ? role : !alt && 'presentation',
+    src: `${name}.${ext}`,
+  }
+
   return picture(props, [
     avif &&
       source({
@@ -37,28 +47,20 @@ export const View = state => {
       srcset: `${name}.webp`,
     }),
 
-    img({
-      class: imgClass,
-      width,
-      height,
-      loading,
-      alt,
-      role,
-      src: `${name}.${ext}`,
-    }),
+    img(imgProps),
   ])
 }
 
 export const propTypes = {
   Picture: [
     { key: 'name', type: 'string', required: true },
-    { key: 'ext', type: 'string', oneOf: ['jpg', 'png', 'gif', 'jpeg'] },
+    { key: 'ext', type: 'string', oneOf: ['jpg', 'png', 'gif', 'jpeg'], default: 'jpg' },
     { key: 'imgClass', type: 'string' },
     { key: 'width', type: ['number', 'string'] },
     { key: 'height', type: ['number', 'string'] },
     { key: 'alt', type: 'string' },
-    { key: 'loading', oneOf: ['lazy'] },
-    { key: 'role', oneOf: ['presentation'] },
+    { key: 'lazy', type: 'boolean' },
+    { key: 'role', type: 'string' },
     { key: 'avif', type: 'boolean' },
   ],
 }
