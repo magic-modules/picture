@@ -45,7 +45,10 @@ export const View = () => {
 
 first release.
 
-##### 0.0.2 - unreleased
+##### 0.0.2
+* lazy is a boolean now.
+
+##### 0.0.3 - unreleased
 
 ...
 
