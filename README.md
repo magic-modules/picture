@@ -46,7 +46,10 @@ export const View = () => {
 first release.
 
 ##### 0.0.2
-* lazy is a boolean now.
+
+- update dependencies
+- lazy is a boolean now.
+- swc will now correctly prefill WEB_ROOT for img src and source srcset
 
 ##### 0.0.3 - unreleased
 
