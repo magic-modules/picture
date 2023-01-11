@@ -35,8 +35,8 @@
     "@magic-modules/no-spy": "0.0.8",
     "@magic-modules/pre": "0.0.11",
     "@magic-themes/docs": "0.0.14",
-    "@magic/core": "0.0.144",
-    "@magic/format": "0.0.48",
+    "@magic/core": "0.0.146",
+    "@magic/format": "0.0.49",
     "@magic/test": "0.2.14"
   },
   "keywords": [
