@@ -15,9 +15,9 @@ const expectedHtml = ({
 <picture class="Picture${cl ? ` ${cl}` : ''}">
 ${avif ? `<source type="image/avif" srcset="${name}.avif"/>` : ''}
 <source type="image/webp" srcset="${name}.webp"/>
-<img${imgClass ? ` class="${imgClass}"` : ''}${
-    lazy ? ` loading="lazy"` : ''
-  } alt="${alt}"${role ? ` role="${role}"` : ''} src="${name}.${ext}"/>
+<img${imgClass ? ` class="${imgClass}"` : ''}${lazy ? ` loading="lazy"` : ''} alt="${alt}"${
+    role ? ` role="${role}"` : ''
+  } src="${name}.${ext}"/>
 </picture>
 `
     .trim()
