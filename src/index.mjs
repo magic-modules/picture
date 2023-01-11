@@ -26,16 +26,6 @@ export const View = state => {
     }
   }
 
-  const imgProps = {
-    class: imgClass,
-    width,
-    height,
-    loading: lazy && 'lazy',
-    alt,
-    role: role ? role : !alt && 'presentation',
-    src: `${name}.${ext}`,
-  }
-
   return picture(props, [
     avif &&
       source({
@@ -47,7 +37,15 @@ export const View = state => {
       srcset: `${name}.webp`,
     }),
 
-    img(imgProps),
+    img({
+      class: imgClass,
+      width,
+      height,
+      loading: lazy && 'lazy',
+      alt,
+      role: role ? role : !alt && 'presentation',
+      src: `${name}.${ext}`,
+    }),
   ])
 }
 
